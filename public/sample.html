@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Preciosa colors (sample)</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #1a1a1a;
+        background: #f4f4f5;
+      }
+      body {
+        margin: 0;
+        padding: 1rem 1.25rem 2rem;
+        max-width: 1200px;
+        margin-inline: auto;
+      }
+      h1 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 0.25rem;
+      }
+      .hint {
+        font-size: 0.85rem;
+        color: #52525b;
+        margin: 0 0 1rem;
+      }
+      .hint code {
+        background: #e4e4e7;
+        padding: 0.1em 0.35em;
+        border-radius: 4px;
+        font-size: 0.8rem;
+      }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      #q {
+        flex: 1;
+        min-width: 200px;
+        padding: 0.5rem 0.65rem;
+        border: 1px solid #d4d4d8;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+      #meta {
+        font-size: 0.85rem;
+        color: #71717a;
+      }
+      #grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.65rem;
+      }
+      a.card {
+        text-decoration: none;
+        color: inherit;
+      }
+      a.card:hover {
+        border-color: #a1a1aa;
+      }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #e4e4e7;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .card .photo {
+        aspect-ratio: 1;
+        background: #fafafa;
+        display: grid;
+        place-items: center;
+      }
+      .card .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .card .swatch {
+        height: 10px;
+      }
+      .card .body {
+        padding: 0.45rem 0.5rem 0.55rem;
+        font-size: 0.72rem;
+        line-height: 1.35;
+      }
+      .card .code {
+        font-weight: 600;
+        font-size: 0.78rem;
+      }
+      .card .name {
+        color: #3f3f46;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .card .hex {
+        font-family: ui-monospace, monospace;
+        color: #71717a;
+        margin-top: 0.15rem;
+      }
+      #err {
+        color: #b91c1c;
+        padding: 1rem;
+        background: #fef2f2;
+        border-radius: 8px;
+        display: none;
+      }
+      #err.show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Preciosa catalog colors</h1>
+    <p class="hint">
+      Serve the <code>public</code> folder over HTTP (e.g. <code>npx serve public</code>) or use
+      <code>npm run dev</code> and open <code>/sample.html</code>.
+    </p>
+    <div id="err"></div>
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Filter by code, name, hex, URL, family…" autocomplete="off" />
+      <span id="meta"></span>
+    </div>
+    <div id="grid"></div>
+
+    <script type="module">
+      const errEl = document.getElementById('err');
+      const grid = document.getElementById('grid');
+      const qEl = document.getElementById('q');
+      const metaEl = document.getElementById('meta');
+
+      function showErr(msg) {
+        errEl.textContent = msg;
+        errEl.classList.add('show');
+      }
+
+      let all = [];
+
+      async function load() {
+        const url = new URL('preciosa-colors.json', import.meta.url);
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        all = await res.json();
+        metaEl.textContent = `${all.length} colors`;
+        render();
+      }
+
+      function render() {
+        const q = qEl.value.trim().toLowerCase();
+        const list = q
+          ? all.filter(
+              (c) =>
+                c.code.toLowerCase().includes(q) ||
+                c.name.toLowerCase().includes(q) ||
+                c.hex.toLowerCase().includes(q) ||
+                (c.family && c.family.toLowerCase().includes(q)) ||
+                (c.finish && c.finish.toLowerCase().includes(q)) ||
+                (c.productUrl && c.productUrl.toLowerCase().includes(q))
+            )
+          : all;
+        metaEl.textContent = q ? `${list.length} / ${all.length} colors` : `${all.length} colors`;
+        grid.replaceChildren();
+        for (const c of list) {
+          const card = c.productUrl ? document.createElement('a') : document.createElement('article');
+          card.className = 'card';
+          if (c.productUrl) {
+            card.href = c.productUrl;
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+          }
+
+          const photoWrap = document.createElement('div');
+          photoWrap.className = 'photo';
+          const img = document.createElement('img');
+          img.loading = 'lazy';
+          img.alt = '';
+          img.src = c.photoUrl;
+          photoWrap.append(img);
+
+          const swatch = document.createElement('div');
+          swatch.className = 'swatch';
+          swatch.style.background = safeHex(c.hex);
+
+          const body = document.createElement('div');
+          body.className = 'body';
+          const codeEl = document.createElement('div');
+          codeEl.className = 'code';
+          codeEl.textContent = c.code;
+          const nameEl = document.createElement('div');
+          nameEl.className = 'name';
+          nameEl.textContent = c.name;
+          const hexEl = document.createElement('div');
+          hexEl.className = 'hex';
+          hexEl.textContent = safeHex(c.hex);
+          body.append(codeEl, nameEl, hexEl);
+
+          card.append(photoWrap, swatch, body);
+          grid.append(card);
+        }
+      }
+
+      function safeHex(h) {
+        return typeof h === 'string' && /^#[0-9a-fA-F]{6}$/.test(h) ? h : '#808080';
+      }
+
+      qEl.addEventListener('input', () => render());
+
+      load().catch((e) => {
+        showErr(
+          e.message +
+            ' — If you opened this file directly (file://), use a local HTTP server instead.'
+        );
+      });
+    </script>
+  </body>
+</html>
