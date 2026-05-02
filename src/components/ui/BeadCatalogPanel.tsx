@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useBraceletStore } from '../../store/useBraceletStore';
+// @ts-ignore
+import BeadMatcherWorker from '../../workers/beadMatcher.worker.ts?worker';
 
 interface CatalogBead {
   id: string;
@@ -8,48 +10,47 @@ interface CatalogBead {
   finish: string;
   family: string;
   photoUrl: string;
-  /** Preciosa product detail page when present */
   productUrl?: string;
   hex: string;
 }
 
-function hexToRgb(hex: string): [number, number, number] {
-  const h = hex.replace('#', '');
-  return [
-    parseInt(h.slice(0, 2), 16),
-    parseInt(h.slice(2, 4), 16),
-    parseInt(h.slice(4, 6), 16),
-  ];
+interface GroupedItem {
+  catalogBead: CatalogBead;
+  totalCount: number;
+  colors: string[];
 }
 
-function colorDistance(r1: number, g1: number, b1: number, r2: number, g2: number, b2: number): number {
-  const rMean = (r1 + r2) / 2;
-  const dr = r1 - r2;
-  const dg = g1 - g2;
-  const db = b1 - b2;
-  return (2 + rMean / 256) * dr * dr + 4 * dg * dg + (2 + (255 - rMean) / 256) * db * db;
-}
-
-function findClosestCatalogBead(hex: string, catalog: CatalogBead[]): CatalogBead | null {
-  if (catalog.length === 0) return null;
-  const [r, g, b] = hexToRgb(hex);
-  let best = catalog[0];
-  let bestDist = Infinity;
-  for (const bead of catalog) {
-    const [br, bg, bb] = hexToRgb(bead.hex);
-    const dist = colorDistance(r, g, b, br, bg, bb);
-    if (dist < bestDist) {
-      bestDist = dist;
-      best = bead;
-    }
-  }
-  return best;
+interface WorkerOutput {
+  grouped: GroupedItem[];
+  newCacheEntries: Record<string, CatalogBead>;
 }
 
 export function BeadCatalogPanel() {
   const beads = useBraceletStore((s) => s.beads);
   const [catalog, setCatalog] = useState<CatalogBead[]>([]);
   const [loading, setLoading] = useState(true);
+  const [grouped, setGrouped] = useState<GroupedItem[]>([]);
+
+  // Cache: color hex → closest catalog bead (persists across renders)
+  const matchCacheRef = useRef<Record<string, CatalogBead>>({});
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const workerRef = useRef<Worker | null>(null);
+
+  useEffect(() => {
+    // Initialize worker
+    workerRef.current = new BeadMatcherWorker();
+
+    workerRef.current.onmessage = (e: MessageEvent<WorkerOutput>) => {
+      const { grouped, newCacheEntries } = e.data;
+      setGrouped(grouped);
+      // Merge new cache entries
+      matchCacheRef.current = { ...matchCacheRef.current, ...newCacheEntries };
+    };
+
+    return () => {
+      workerRef.current?.terminate();
+    };
+  }, []);
 
   useEffect(() => {
     fetch('/preciosa-colors.json')
@@ -61,53 +62,23 @@ export function BeadCatalogPanel() {
       .catch(() => setLoading(false));
   }, []);
 
-  // Count unique colors used in the bracelet
-  const colorCounts = useMemo(() => {
-    const counts = new Map<string, number>();
-    for (const row of beads) {
-      for (const bead of row) {
-        const c = bead.color.toLowerCase();
-        counts.set(c, (counts.get(c) || 0) + 1);
-      }
-    }
-    return counts;
-  }, [beads]);
+  // Debounced computation of needed beads in worker
+  useEffect(() => {
+    if (catalog.length === 0 || !workerRef.current) return;
 
-  // Match each unique color to a catalog bead
-  const neededBeads = useMemo(() => {
-    if (catalog.length === 0) return [];
-    const results: { color: string; count: number; catalogBead: CatalogBead }[] = [];
-    for (const [color, count] of colorCounts) {
-      const match = findClosestCatalogBead(color, catalog);
-      if (match) {
-        results.push({ color, count, catalogBead: match });
-      }
-    }
-    // Sort by count descending
-    results.sort((a, b) => b.count - a.count);
-    return results;
-  }, [colorCounts, catalog]);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      workerRef.current!.postMessage({
+        beads,
+        catalog,
+        cache: matchCacheRef.current,
+      });
+    }, 300);
 
-  // Group by catalog bead code (multiple bracelet colors might map to same bead)
-  const grouped = useMemo(() => {
-    const map = new Map<string, { catalogBead: CatalogBead; totalCount: number; colors: string[] }>();
-    for (const item of neededBeads) {
-      const existing = map.get(item.catalogBead.code);
-      if (existing) {
-        existing.totalCount += item.count;
-        existing.colors.push(item.color);
-      } else {
-        map.set(item.catalogBead.code, {
-          catalogBead: item.catalogBead,
-          totalCount: item.count,
-          colors: [item.color],
-        });
-      }
-    }
-    const arr = Array.from(map.values());
-    arr.sort((a, b) => b.totalCount - a.totalCount);
-    return arr;
-  }, [neededBeads]);
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, [beads, catalog]);
 
   if (loading) {
     return (
@@ -136,13 +107,10 @@ export function BeadCatalogPanel() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 border border-gray-100 hover:bg-blue-50 hover:border-blue-200 transition-colors"
           >
-            {/* Color swatch */}
             <div
               className="w-8 h-8 rounded-full shrink-0 border border-gray-200"
               style={{ backgroundColor: item.catalogBead.hex }}
             />
-
-            {/* Info */}
             <div className="flex-1 min-w-0">
               <p className="text-xs font-medium text-gray-800 truncate">
                 {item.catalogBead.name}
@@ -154,8 +122,6 @@ export function BeadCatalogPanel() {
                 {item.totalCount} bead{item.totalCount !== 1 ? 's' : ''}
               </p>
             </div>
-
-            {/* Bracelet colors that map to this bead */}
             <div className="flex flex-col gap-0.5 shrink-0">
               {item.colors.slice(0, 3).map((c, i) => (
                 <div

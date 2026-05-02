@@ -141,18 +141,22 @@ function App() {
               <div key={i} className="relative group">
                 <button
                   onClick={() => setActiveColor(color)}
+                  onDoubleClick={() => {
+                    const input = document.getElementById(`palette-edit-${i}`) as HTMLInputElement;
+                    input?.click();
+                  }}
                   className={`w-7 h-7 rounded-full border-2 ${
                     activeColor === color ? 'border-blue-500 scale-110' : 'border-gray-300'
                   }`}
                   style={{ backgroundColor: color }}
+                  title="Click to select, double-click to edit"
                 />
                 <input
+                  id={`palette-edit-${i}`}
                   type="color"
                   value={color}
                   onChange={(e) => updatePaletteColor(i, e.target.value)}
-                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  title="Right-click or double-click to edit"
-                  onDoubleClick={(e) => e.stopPropagation()}
+                  className="absolute top-0 left-0 w-0 h-0 opacity-0 pointer-events-none"
                 />
                 {palette.length > 1 && (
                   <button
