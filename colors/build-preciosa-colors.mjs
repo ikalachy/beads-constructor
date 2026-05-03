@@ -14,6 +14,10 @@ const CSV_PATH = path.join(__dirname, 'catalog-preciosa-ornela-com-2026-05-01.cs
 
 const CONCURRENCY = 14;
 const RESIZE = 48;
+/** Rocailles article prefix in catalog image URLs */
+const ROCAILLES_PHOTO_SUBSTR = '311-19001';
+/** Rocailles 10/0 size segment in photo filenames */
+const ROCAILLES_10_0_PHOTO_SUBSTR = '311-19001-10_0';
 
 function toHex(n) {
   return Math.max(0, Math.min(255, n)).toString(16).padStart(2, '0');
@@ -163,4 +167,16 @@ const outPublic = path.join(repoRoot, 'public', 'preciosa-colors.json');
 if (fs.existsSync(path.join(repoRoot, 'public'))) {
   fs.writeFileSync(outPublic, JSON.stringify(withHex, null, 2) + '\n', 'utf8');
   console.log(`Wrote ${outPublic} (${withHex.length} entries)`);
+
+  const rocailles = withHex.filter((e) => e.photoUrl.includes(ROCAILLES_PHOTO_SUBSTR));
+  const outRocailles = path.join(repoRoot, 'public', 'preciosa-colors-rocailles.json');
+  fs.writeFileSync(outRocailles, JSON.stringify(rocailles, null, 2) + '\n', 'utf8');
+  console.log(`Wrote ${outRocailles} (${rocailles.length} entries, photoUrl contains ${ROCAILLES_PHOTO_SUBSTR})`);
+
+  const rocailles10_0 = withHex.filter((e) => e.photoUrl.includes(ROCAILLES_10_0_PHOTO_SUBSTR));
+  const outRocailles10_0 = path.join(repoRoot, 'public', 'preciosa-colors-rocailles-10-0.json');
+  fs.writeFileSync(outRocailles10_0, JSON.stringify(rocailles10_0, null, 2) + '\n', 'utf8');
+  console.log(
+    `Wrote ${outRocailles10_0} (${rocailles10_0.length} entries, photoUrl contains ${ROCAILLES_10_0_PHOTO_SUBSTR})`
+  );
 }

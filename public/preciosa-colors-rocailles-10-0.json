@@ -1,0 +1,912 @@
+[
+  {
+    "id": "1777651998-3143",
+    "code": "93310",
+    "name": "opaque red coral",
+    "finish": "natural",
+    "family": "311-19001-10/0-93310",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-93310.webp?v=1774867213",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1603",
+    "hex": "#573736"
+  },
+  {
+    "id": "1777652000-3144",
+    "code": "93300",
+    "name": "opaque red coral",
+    "finish": "natural",
+    "family": "311-19001-10/0-93300",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-93300.webp?v=1774867213",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1602",
+    "hex": "#612f2f"
+  },
+  {
+    "id": "1777652002-3145",
+    "code": "93210",
+    "name": "opaque red coral",
+    "finish": "natural",
+    "family": "311-19001-10/0-93210",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-93210.webp?v=1774867213",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1601",
+    "hex": "#862927"
+  },
+  {
+    "id": "1777652004-3146",
+    "code": "93190",
+    "name": "opaque red coral",
+    "finish": "natural",
+    "family": "311-19001-10/0-93190",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-93190.webp?v=1774867213",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1600",
+    "hex": "#b73137"
+  },
+  {
+    "id": "1777652007-3147",
+    "code": "93170",
+    "name": "opaque red coral",
+    "finish": "natural",
+    "family": "311-19001-10/0-93170",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-93170.webp?v=1774867213",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1599",
+    "hex": "#d53f36"
+  },
+  {
+    "id": "1777652009-3148",
+    "code": "93140",
+    "name": "opaque orange",
+    "finish": "natural",
+    "family": "311-19001-10/0-93140",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-93140.webp?v=1774867213",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1598",
+    "hex": "#f86b2a"
+  },
+  {
+    "id": "1777652012-3149",
+    "code": "93110",
+    "name": "opaque orange",
+    "finish": "natural",
+    "family": "311-19001-10/0-93110",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-93110.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1597",
+    "hex": "#f1a31d"
+  },
+  {
+    "id": "1777652014-3150",
+    "code": "90120",
+    "name": "garnet",
+    "finish": "natural",
+    "family": "311-19001-10/0-90120",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-90120.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1596",
+    "hex": "#461a1a"
+  },
+  {
+    "id": "1777652017-3151",
+    "code": "90090",
+    "name": "ruby",
+    "finish": "natural",
+    "family": "311-19001-10/0-90090",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-90090.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1595",
+    "hex": "#902525"
+  },
+  {
+    "id": "1777652019-3152",
+    "code": "90070",
+    "name": "transp. red",
+    "finish": "natural",
+    "family": "311-19001-10/0-90070",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-90070.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1594",
+    "hex": "#b02424"
+  },
+  {
+    "id": "1777652021-3153",
+    "code": "90050",
+    "name": "transp. lt.red",
+    "finish": "natural",
+    "family": "311-19001-10/0-90050",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-90050.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1593",
+    "hex": "#d33c28"
+  },
+  {
+    "id": "1777652024-3154",
+    "code": "90030",
+    "name": "hyacinth",
+    "finish": "natural",
+    "family": "311-19001-10/0-90030",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-90030.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1592",
+    "hex": "#ef4e37"
+  },
+  {
+    "id": "1777652026-3155",
+    "code": "90000",
+    "name": "hyacinth",
+    "finish": "natural",
+    "family": "311-19001-10/0-90000",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-90000.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1591",
+    "hex": "#e57520"
+  },
+  {
+    "id": "1777652028-3156",
+    "code": "83730",
+    "name": "harlequin yellow-blue",
+    "finish": "natural",
+    "family": "Harlequin",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-83730.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1590",
+    "hex": "#6a6751"
+  },
+  {
+    "id": "1777652031-3157",
+    "code": "83130",
+    "name": "opaque yellow \"limon\"",
+    "finish": "natural",
+    "family": "311-19001-10/0-83130",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-83130.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1589",
+    "hex": "#f9d117"
+  },
+  {
+    "id": "1777652033-3158",
+    "code": "83110",
+    "name": "opaque yellow \"limon\"",
+    "finish": "natural",
+    "family": "311-19001-10/0-83110",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-83110.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1588",
+    "hex": "#eed511"
+  },
+  {
+    "id": "1777652035-3159",
+    "code": "81797",
+    "name": "harlequin red-yellow",
+    "finish": "natural",
+    "family": "Harlequin",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-81797.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1587",
+    "hex": "#cc3928"
+  },
+  {
+    "id": "1777652037-3160",
+    "code": "81761",
+    "name": "harlequin aquamarine-yellow",
+    "finish": "natural",
+    "family": "Harlequin",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-81761.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1586",
+    "hex": "#746e3e"
+  },
+  {
+    "id": "1777652040-3161",
+    "code": "81733",
+    "name": "harlequin sapphire-yellow",
+    "finish": "natural",
+    "family": "Harlequin",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-81733.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1585",
+    "hex": "#5a633c"
+  },
+  {
+    "id": "1777652042-3162",
+    "code": "80060",
+    "name": "hyacinth",
+    "finish": "natural",
+    "family": "311-19001-10/0-80060",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-80060.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1584",
+    "hex": "#ce8416"
+  },
+  {
+    "id": "1777652044-3163",
+    "code": "80010",
+    "name": "transp. yellow amber",
+    "finish": "natural",
+    "family": "311-19001-10/0-80010",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-80010.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1583",
+    "hex": "#dcaf12"
+  },
+  {
+    "id": "1777652047-3164",
+    "code": "73420",
+    "name": "opaque pink",
+    "finish": "natural",
+    "family": "311-19001-10/0-73420",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-73420.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1582",
+    "hex": "#f3dee0"
+  },
+  {
+    "id": "1777652049-3165",
+    "code": "63130",
+    "name": "green turquoise",
+    "finish": "natural",
+    "family": "311-19001-10/0-63130",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-63130.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1581",
+    "hex": "#69afa5"
+  },
+  {
+    "id": "1777652051-3166",
+    "code": "63080",
+    "name": "dark turquoise",
+    "finish": "natural",
+    "family": "311-19001-10/0-63080",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-63080.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1580",
+    "hex": "#627fb2"
+  },
+  {
+    "id": "1777652054-3167",
+    "code": "63050",
+    "name": "turquoise",
+    "finish": "natural",
+    "family": "311-19001-10/0-63050",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-63050.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1579",
+    "hex": "#6da4ca"
+  },
+  {
+    "id": "1777652056-3168",
+    "code": "63030",
+    "name": "turquoise",
+    "finish": "natural",
+    "family": "311-19001-10/0-63030",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-63030.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1578",
+    "hex": "#6ba0b9"
+  },
+  {
+    "id": "1777652058-3169",
+    "code": "63020",
+    "name": "turquoise",
+    "finish": "natural",
+    "family": "311-19001-10/0-63020",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-63020.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1577",
+    "hex": "#74a7ca"
+  },
+  {
+    "id": "1777652061-3170",
+    "code": "63000",
+    "name": "lt. turquoise",
+    "finish": "natural",
+    "family": "311-19001-10/0-63000",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-63000.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1576",
+    "hex": "#8ec1dd"
+  },
+  {
+    "id": "1777652063-3171",
+    "code": "60300",
+    "name": "dark aquamarine",
+    "finish": "natural",
+    "family": "311-19001-10/0-60300",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-60300.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1575",
+    "hex": "#30409d"
+  },
+  {
+    "id": "1777652065-3172",
+    "code": "60150",
+    "name": "aquamarine",
+    "finish": "natural",
+    "family": "311-19001-10/0-60150",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-60150.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1574",
+    "hex": "#51a5d7"
+  },
+  {
+    "id": "1777652067-3173",
+    "code": "60100",
+    "name": "dark aquamarine",
+    "finish": "natural",
+    "family": "311-19001-10/0-60100",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-60100.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1573",
+    "hex": "#2d384b"
+  },
+  {
+    "id": "1777652070-3174",
+    "code": "60030",
+    "name": "aquamarine",
+    "finish": "natural",
+    "family": "311-19001-10/0-60030",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-60030.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1572",
+    "hex": "#71baea"
+  },
+  {
+    "id": "1777652072-3175",
+    "code": "60010",
+    "name": "aquamarine",
+    "finish": "natural",
+    "family": "311-19001-10/0-60010",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-60010.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1571",
+    "hex": "#71c0ef"
+  },
+  {
+    "id": "1777652074-3176",
+    "code": "60000",
+    "name": "lt. aquamarine",
+    "finish": "natural",
+    "family": "311-19001-10/0-60000",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-60000.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1570",
+    "hex": "#9dd9ef"
+  },
+  {
+    "id": "1777652077-3177",
+    "code": "53800",
+    "name": "yellow stripes on green",
+    "finish": "natural",
+    "family": "4 stripes",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53800.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1569",
+    "hex": "#5f804e"
+  },
+  {
+    "id": "1777652079-3178",
+    "code": "53430",
+    "name": "opaque green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53430",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53430.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1568",
+    "hex": "#8d9125"
+  },
+  {
+    "id": "1777652081-3179",
+    "code": "53410",
+    "name": "opaque lt. green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53410",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53410.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1567",
+    "hex": "#afd576"
+  },
+  {
+    "id": "1777652084-3180",
+    "code": "53310",
+    "name": "opaque lt. green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53310",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53310.webp?v=1774867212",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1566",
+    "hex": "#94bd50"
+  },
+  {
+    "id": "1777652086-3181",
+    "code": "53270",
+    "name": "opaque dark green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53270",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53270.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1565",
+    "hex": "#4e5e5c"
+  },
+  {
+    "id": "1777652088-3182",
+    "code": "53250",
+    "name": "opaque green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53250",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53250.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1564",
+    "hex": "#69ad6c"
+  },
+  {
+    "id": "1777652091-3183",
+    "code": "53240",
+    "name": "opaque dark green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53240",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53240.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1563",
+    "hex": "#487761"
+  },
+  {
+    "id": "1777652093-3184",
+    "code": "53230",
+    "name": "opaque green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53230",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53230.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1562",
+    "hex": "#679d4d"
+  },
+  {
+    "id": "1777652095-3185",
+    "code": "53210",
+    "name": "opaque green",
+    "finish": "natural",
+    "family": "311-19001-10/0-53210",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-53210.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1561",
+    "hex": "#69a156"
+  },
+  {
+    "id": "1777652098-3186",
+    "code": "52797",
+    "name": "harlequin green-red",
+    "finish": "natural",
+    "family": "Harlequin",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-52797.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1560",
+    "hex": "#362f28"
+  },
+  {
+    "id": "1777652100-3187",
+    "code": "52240",
+    "name": "alabaster green",
+    "finish": "natural",
+    "family": "311-19001-10/0-52240",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-52240.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1559",
+    "hex": "#71a585"
+  },
+  {
+    "id": "1777652102-3188",
+    "code": "50710",
+    "name": "transp. teal green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50710",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50710.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1558",
+    "hex": "#3d6058"
+  },
+  {
+    "id": "1777652105-3189",
+    "code": "50430",
+    "name": "transp. green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50430",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50430.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1557",
+    "hex": "#5a802e"
+  },
+  {
+    "id": "1777652107-3190",
+    "code": "50290",
+    "name": "transp. dark green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50290",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50290.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1556",
+    "hex": "#2f3428"
+  },
+  {
+    "id": "1777652109-3191",
+    "code": "50220",
+    "name": "transp. lt. green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50220",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50220.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1555",
+    "hex": "#9fb12d"
+  },
+  {
+    "id": "1777652111-3192",
+    "code": "50150",
+    "name": "transp. dark green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50150",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50150.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1554",
+    "hex": "#3d4439"
+  },
+  {
+    "id": "1777652114-3193",
+    "code": "50120",
+    "name": "transp. green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50120",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50120.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1553",
+    "hex": "#334e28"
+  },
+  {
+    "id": "1777652116-3194",
+    "code": "50100",
+    "name": "transp. lt. green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50100",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50100.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1552",
+    "hex": "#60954d"
+  },
+  {
+    "id": "1777652119-3195",
+    "code": "50060",
+    "name": "transp. green",
+    "finish": "natural",
+    "family": "311-19001-10/0-50060",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-50060.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1551",
+    "hex": "#385634"
+  },
+  {
+    "id": "1777652121-3196",
+    "code": "43020",
+    "name": "opaque grey",
+    "finish": "natural",
+    "family": "311-19001-10/0-43020",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-43020.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1550",
+    "hex": "#847f74"
+  },
+  {
+    "id": "1777652123-3197",
+    "code": "40010",
+    "name": "transp. grey",
+    "finish": "natural",
+    "family": "311-19001-10/0-40010",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-40010.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1549",
+    "hex": "#4f4f4d"
+  },
+  {
+    "id": "1777652126-3198",
+    "code": "33220",
+    "name": "opaque blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33220",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33220.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1548",
+    "hex": "#496c95"
+  },
+  {
+    "id": "1777652128-3199",
+    "code": "33210",
+    "name": "opaque blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33210",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33210.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1547",
+    "hex": "#4c6ea0"
+  },
+  {
+    "id": "1777652130-3200",
+    "code": "33080",
+    "name": "opaque dark blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33080",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33080.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1546",
+    "hex": "#403e44"
+  },
+  {
+    "id": "1777652133-3201",
+    "code": "33070",
+    "name": "opaque dark blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33070",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33070.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1545",
+    "hex": "#30325e"
+  },
+  {
+    "id": "1777652135-3202",
+    "code": "33060",
+    "name": "opaque blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33060",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33060.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1544",
+    "hex": "#363190"
+  },
+  {
+    "id": "1777652137-3203",
+    "code": "33050",
+    "name": "opaque blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33050",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33050.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1543",
+    "hex": "#333185"
+  },
+  {
+    "id": "1777652140-3204",
+    "code": "33040",
+    "name": "opaque blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33040",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33040.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1542",
+    "hex": "#606ac7"
+  },
+  {
+    "id": "1777652142-3205",
+    "code": "33020",
+    "name": "opaque blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33020",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33020.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1541",
+    "hex": "#97a7e2"
+  },
+  {
+    "id": "1777652144-3206",
+    "code": "13780",
+    "name": "opaque brown \"tango\"",
+    "finish": "natural",
+    "family": "311-19001-10/0-13780",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-13780.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1525",
+    "hex": "#69584f"
+  },
+  {
+    "id": "1777652147-3207",
+    "code": "13600",
+    "name": "opaque brown \"tango\"",
+    "finish": "natural",
+    "family": "311-19001-10/0-13600",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-13600.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1524",
+    "hex": "#7f503c"
+  },
+  {
+    "id": "1777652149-3208",
+    "code": "10705",
+    "name": "harlequin crystal-topaz",
+    "finish": "natural",
+    "family": "Harlequin",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-10705.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1523",
+    "hex": "#c68a3d"
+  },
+  {
+    "id": "1777652152-3209",
+    "code": "10140",
+    "name": "dark topaz",
+    "finish": "natural",
+    "family": "311-19001-10/0-10140",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-10140.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1522",
+    "hex": "#4d4037"
+  },
+  {
+    "id": "1777652154-3210",
+    "code": "10110",
+    "name": "dark topaz",
+    "finish": "natural",
+    "family": "311-19001-10/0-10110",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-10110.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1521",
+    "hex": "#603b29"
+  },
+  {
+    "id": "1777652156-3211",
+    "code": "10090",
+    "name": "topaz",
+    "finish": "natural",
+    "family": "311-19001-10/0-10090",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-10090.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1520",
+    "hex": "#884922"
+  },
+  {
+    "id": "1777652159-3212",
+    "code": "10070",
+    "name": "topaz",
+    "finish": "natural",
+    "family": "311-19001-10/0-10070",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-10070.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1519",
+    "hex": "#a96427"
+  },
+  {
+    "id": "1777652161-3213",
+    "code": "10050",
+    "name": "topaz",
+    "finish": "natural",
+    "family": "311-19001-10/0-10050",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-10050.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1518",
+    "hex": "#cc842a"
+  },
+  {
+    "id": "1777652163-3214",
+    "code": "10020",
+    "name": "lt. topaz",
+    "finish": "natural",
+    "family": "311-19001-10/0-10020",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-10020.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1517",
+    "hex": "#d39833"
+  },
+  {
+    "id": "1777652166-3215",
+    "code": "03730",
+    "name": "harlequin chalkwhite-blue",
+    "finish": "natural",
+    "family": "Harlequin",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-03730.webp?v=1774867380",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/90698",
+    "hex": "#9897cc"
+  },
+  {
+    "id": "1777652168-3216",
+    "code": "03050",
+    "name": "chalkwhite",
+    "finish": "natural",
+    "family": "311-19001-10/0-03050",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-03050.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1516",
+    "hex": "#beb8af"
+  },
+  {
+    "id": "1777652170-3217",
+    "code": "02090",
+    "name": "alabaster white",
+    "finish": "natural",
+    "family": "311-19001-10/0-02090",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-02090.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1515",
+    "hex": "#9e978e"
+  },
+  {
+    "id": "1777652173-3218",
+    "code": "00050",
+    "name": "crystal",
+    "finish": "natural",
+    "family": "311-19001-10/0-00050",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-00050.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1514",
+    "hex": "#9b9389"
+  },
+  {
+    "id": "1777652180-3221",
+    "code": "33000",
+    "name": "opaque lt. blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-33000",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-33000.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1540",
+    "hex": "#bdc7e5"
+  },
+  {
+    "id": "1777652182-3222",
+    "code": "32010",
+    "name": "alabaster blue",
+    "finish": "natural",
+    "family": "311-19001-10/0-32010",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-32010.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1539",
+    "hex": "#8293e3"
+  },
+  {
+    "id": "1777652184-3223",
+    "code": "30110",
+    "name": "dark sapphire",
+    "finish": "natural",
+    "family": "311-19001-10/0-30110",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-30110.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1538",
+    "hex": "#46454a"
+  },
+  {
+    "id": "1777652186-3224",
+    "code": "30100",
+    "name": "dark sapphire",
+    "finish": "natural",
+    "family": "311-19001-10/0-30100",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-30100.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1537",
+    "hex": "#2a265b"
+  },
+  {
+    "id": "1777652189-3225",
+    "code": "30080",
+    "name": "sapphire",
+    "finish": "natural",
+    "family": "311-19001-10/0-30080",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-30080.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1536",
+    "hex": "#342f8c"
+  },
+  {
+    "id": "1777652191-3226",
+    "code": "30050",
+    "name": "sapphire",
+    "finish": "natural",
+    "family": "311-19001-10/0-30050",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-30050.webp?v=1774867211",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1535",
+    "hex": "#4947c2"
+  },
+  {
+    "id": "1777652193-3227",
+    "code": "30030",
+    "name": "lt. sapphire",
+    "finish": "natural",
+    "family": "311-19001-10/0-30030",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-30030.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1534",
+    "hex": "#626ee1"
+  },
+  {
+    "id": "1777652196-3228",
+    "code": "23980",
+    "name": "black",
+    "finish": "natural",
+    "family": "311-19001-10/0-23980",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-23980.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1533",
+    "hex": "#44433f"
+  },
+  {
+    "id": "1777652198-3229",
+    "code": "23420",
+    "name": "opaque lilac",
+    "finish": "natural",
+    "family": "311-19001-10/0-23420",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-23420.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1532",
+    "hex": "#dbd2e8"
+  },
+  {
+    "id": "1777652200-3230",
+    "code": "23300",
+    "name": "white stripes on black",
+    "finish": "natural",
+    "family": "4 stripes",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-23300.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1531",
+    "hex": "#302f2c"
+  },
+  {
+    "id": "1777652203-3231",
+    "code": "23040",
+    "name": "opaque dark violet",
+    "finish": "natural",
+    "family": "311-19001-10/0-23040",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-23040.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1530",
+    "hex": "#7b6160"
+  },
+  {
+    "id": "1777652205-3232",
+    "code": "23020",
+    "name": "opaque violet",
+    "finish": "natural",
+    "family": "311-19001-10/0-23020",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-23020.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1529",
+    "hex": "#9c7d7b"
+  },
+  {
+    "id": "1777652207-3233",
+    "code": "20080",
+    "name": "dark amethyst",
+    "finish": "natural",
+    "family": "311-19001-10/0-20080",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-20080.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1528",
+    "hex": "#42353b"
+  },
+  {
+    "id": "1777652210-3234",
+    "code": "20060",
+    "name": "amethyst",
+    "finish": "natural",
+    "family": "311-19001-10/0-20060",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-20060.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1527",
+    "hex": "#48353d"
+  },
+  {
+    "id": "1777652212-3235",
+    "code": "20010",
+    "name": "lt. amethyst",
+    "finish": "natural",
+    "family": "311-19001-10/0-20010",
+    "photoUrl": "https://catalog.preciosa-ornela.com/produkty/perlicky/fotky/311-19001-10_0-20010.webp?v=1774867210",
+    "productUrl": "https://catalog.preciosa-ornela.com/detail/1526",
+    "hex": "#805f6e"
+  }
+]

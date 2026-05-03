@@ -27,6 +27,7 @@ interface WorkerOutput {
 
 export function BeadCatalogPanel() {
   const beads = useBraceletStore((s) => s.beads);
+  const beadSizeMm = useBraceletStore((s) => s.config.beadSizeMm);
   const [catalog, setCatalog] = useState<CatalogBead[]>([]);
   const [loading, setLoading] = useState(true);
   const [grouped, setGrouped] = useState<GroupedItem[]>([]);
@@ -53,14 +54,22 @@ export function BeadCatalogPanel() {
   }, []);
 
   useEffect(() => {
-    fetch('/preciosa-colors.json')
+    setLoading(true);
+    // Select catalog file based on bead size
+    const catalogFile = beadSizeMm === 1
+      ? '/preciosa-colors-rocailles-10-0.json'
+      : '/preciosa-colors-rocailles.json';
+
+    fetch(catalogFile)
       .then((r) => r.json())
       .then((data: CatalogBead[]) => {
         setCatalog(data);
         setLoading(false);
+        // Clear cache when switching catalogs
+        matchCacheRef.current = {};
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [beadSizeMm]);
 
   // Debounced computation of needed beads in worker
   useEffect(() => {
