@@ -28,6 +28,8 @@ function App() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [settingsPanelOpen, setSettingsPanelOpen] = useState(false);
+  const [catalogPanelOpen, setCatalogPanelOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const rows = calculateRows(config.lengthCm, config.beadSizeMm);
@@ -70,8 +72,56 @@ function App() {
     <div className="relative w-full h-full">
       <BraceletViewport />
 
-      {/* Overlay Panel */}
-      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 w-64 space-y-4 text-sm">
+      {/* Mobile: Floating Action Buttons */}
+      <div className="lg:hidden fixed bottom-4 left-4 right-4 flex gap-2 z-40 pointer-events-none">
+        <button
+          onClick={() => setSettingsPanelOpen(!settingsPanelOpen)}
+          className="pointer-events-auto flex-1 py-3 rounded-lg bg-blue-600 text-white font-medium shadow-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+          Settings
+        </button>
+        <button
+          onClick={() => setCatalogPanelOpen(!catalogPanelOpen)}
+          className="pointer-events-auto flex-1 py-3 rounded-lg bg-emerald-600 text-white font-medium shadow-lg hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          </svg>
+          Beads
+        </button>
+      </div>
+
+      {/* Settings Panel - Desktop: always visible, Mobile: slide-in drawer */}
+      <div className={`
+        ${settingsPanelOpen ? 'fixed' : 'hidden'}
+        lg:block lg:absolute
+        inset-0 lg:inset-auto
+        lg:top-4 lg:left-4 lg:w-64
+        z-50 lg:z-auto
+      `}>
+        {/* Mobile backdrop */}
+        <div
+          className="lg:hidden absolute inset-0 bg-black/50 backdrop-blur-sm"
+          onClick={() => setSettingsPanelOpen(false)}
+        />
+
+        {/* Panel content */}
+        <div className={`
+          absolute bottom-0 left-0 right-0 max-h-[85vh]
+          lg:relative lg:w-full lg:h-auto lg:max-h-none
+          bg-white/95 backdrop-blur-sm lg:bg-white/90
+          rounded-t-2xl lg:rounded-lg shadow-2xl lg:shadow-lg
+          flex flex-col
+        `}>
+          {/* Mobile: drag handle */}
+          <div className="lg:hidden sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-2 flex justify-center flex-shrink-0">
+            <div className="w-12 h-1 bg-gray-300 rounded-full" />
+          </div>
+
+          <div className="p-4 space-y-4 text-sm overflow-y-auto flex-1 min-h-0">
         <h1 className="text-base font-semibold text-gray-800">Bracelet Designer</h1>
 
         {/* Width */}
@@ -226,7 +276,13 @@ function App() {
 
         {/* Upload Image */}
         <button
-          onClick={() => fileInputRef.current?.click()}
+          onClick={() => {
+            fileInputRef.current?.click();
+            // Close settings panel on mobile after clicking upload
+            if (window.innerWidth < 1024) {
+              setTimeout(() => setSettingsPanelOpen(false), 100);
+            }
+          }}
           className="w-full py-2 rounded bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition-colors"
         >
           Upload Image
@@ -235,6 +291,7 @@ function App() {
           ref={fileInputRef}
           type="file"
           accept="image/*"
+          capture="environment"
           onChange={handleFileSelect}
           className="hidden"
         />
@@ -252,10 +309,25 @@ function App() {
           <p>Rows: {rows} | Beads: {totalBeads}</p>
           <p>Grid: {config.width} x {rows}</p>
         </div>
+          </div>
+
+          {/* Mobile: Close button - sticky at bottom */}
+          <div className="lg:hidden sticky bottom-0 p-4 pt-2 bg-white/95 backdrop-blur-sm border-t border-gray-200 flex-shrink-0">
+            <button
+              onClick={() => setSettingsPanelOpen(false)}
+              className="w-full py-3 rounded-lg bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Right panel: Catalog beads needed */}
-      <BeadCatalogPanel />
+      {/* Catalog Panel - Desktop: always visible, Mobile: slide-in drawer */}
+      <BeadCatalogPanel
+        isOpen={catalogPanelOpen}
+        onClose={() => setCatalogPanelOpen(false)}
+      />
 
       {/* Image Upload Modal */}
       {modalOpen && imageSrc && (

@@ -409,27 +409,31 @@ export function ImageUploadModal({ imageSrc, onClose }: ImageUploadModalProps) {
   })();
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-      <div className="bg-white rounded-xl shadow-2xl flex flex-col max-w-6xl w-[95vw] h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-0 sm:p-4">
+      <div className="bg-white rounded-none sm:rounded-xl shadow-2xl flex flex-col max-w-6xl w-full h-full sm:w-[95vw] sm:h-[90vh]">
         {/* Header */}
-        <div className="px-5 py-3 border-b flex items-center justify-between">
-          <div>
-            <h2 className="text-base font-semibold text-gray-800">Select pattern area</h2>
-            <p className="text-xs text-gray-500 mt-0.5">
+        <div className="px-3 sm:px-5 py-2 sm:py-3 border-b flex items-center justify-between flex-shrink-0">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-sm sm:text-base font-semibold text-gray-800">Select pattern area</h2>
+            <p className="text-[10px] text-gray-500 mt-0.5 sm:hidden">
+              Draw to select, drag to move, pinch to zoom
+            </p>
+            <p className="text-xs text-gray-500 mt-0.5 hidden sm:block">
               Draw a rectangle to select. Drag to move. Scroll to zoom. Alt+drag to pan.
             </p>
           </div>
-          <span className="text-xs text-gray-400 font-mono">{gridCols}×{gridRows} beads</span>
+          <span className="text-[10px] sm:text-xs text-gray-400 font-mono ml-2">{gridCols}×{gridRows}</span>
         </div>
 
         {/* Image area */}
         <div
           ref={containerRef}
-          className="relative flex-1 min-h-0 mx-5 mt-4 overflow-hidden rounded-lg border border-gray-200 bg-gray-900 select-none"
+          className="relative flex-1 min-h-0 mx-2 sm:mx-5 mt-2 sm:mt-4 mb-2 overflow-hidden rounded-lg border border-gray-200 bg-gray-900 select-none touch-none"
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onWheel={handleWheel}
+          style={{ touchAction: 'none' }}
         >
           {/* Image */}
           <img
@@ -513,15 +517,15 @@ export function ImageUploadModal({ imageSrc, onClose }: ImageUploadModalProps) {
         </div>
 
         {/* Controls bar */}
-        <div className="px-5 py-3 flex items-center gap-4">
+        <div className="px-3 sm:px-5 py-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 flex-shrink-0 border-t sm:border-t-0">
           <button
             onClick={handleAutoFit}
-            className="text-xs text-blue-600 hover:text-blue-800 font-medium"
+            className="text-xs text-blue-600 hover:text-blue-800 font-medium sm:flex-shrink-0"
           >
             Auto-fit
           </button>
           <div className="flex items-center gap-2 flex-1">
-            <span className="text-xs text-gray-500">Zoom</span>
+            <span className="text-[10px] sm:text-xs text-gray-500">Zoom</span>
             <input
               type="range"
               min={0.5}
@@ -529,23 +533,23 @@ export function ImageUploadModal({ imageSrc, onClose }: ImageUploadModalProps) {
               step={0.1}
               value={zoom}
               onChange={(e) => setZoom(Number(e.target.value))}
-              className="flex-1 max-w-48"
+              className="flex-1 sm:max-w-48"
             />
-            <span className="text-xs text-gray-600 font-mono w-10">
+            <span className="text-[10px] sm:text-xs text-gray-600 font-mono w-8 sm:w-10">
               {zoom.toFixed(1)}x
             </span>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded text-xs sm:text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={handleApply}
               disabled={!imageLoaded || !hasPreview}
-              className="px-4 py-2 rounded text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded text-xs sm:text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Apply
             </button>

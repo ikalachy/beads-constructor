@@ -25,7 +25,12 @@ interface WorkerOutput {
   newCacheEntries: Record<string, CatalogBead>;
 }
 
-export function BeadCatalogPanel() {
+interface BeadCatalogPanelProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export function BeadCatalogPanel({ isOpen = true, onClose }: BeadCatalogPanelProps) {
   const beads = useBraceletStore((s) => s.beads);
   const beadSizeMm = useBraceletStore((s) => s.config.beadSizeMm);
   const [catalog, setCatalog] = useState<CatalogBead[]>([]);
@@ -89,67 +94,103 @@ export function BeadCatalogPanel() {
     };
   }, [beads, catalog]);
 
-  if (loading) {
-    return (
-      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 w-64">
-        <p className="text-xs text-gray-500">Loading catalog...</p>
-      </div>
-    );
-  }
-
   return (
-    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 w-72 max-h-[calc(100vh-2rem)] flex flex-col">
-      <h2 className="text-sm font-semibold text-gray-800 mb-1">Beads Needed</h2>
-      <p className="text-[10px] text-gray-500 mb-3">
-        {grouped.length} colors from Preciosa catalog
-      </p>
+    <div className={`
+      ${isOpen ? 'fixed' : 'hidden'}
+      lg:block lg:absolute
+      inset-0 lg:inset-auto
+      lg:top-4 lg:right-4 lg:w-72
+      z-50 lg:z-auto
+    `}>
+      {/* Mobile backdrop */}
+      <div
+        className="lg:hidden absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onClick={() => onClose?.()}
+      />
 
-      <div className="flex-1 overflow-y-auto space-y-2 min-h-0">
-        {grouped.map((item) => (
-          <a
-            key={item.catalogBead.code}
-            href={
-              item.catalogBead.productUrl ||
-              `https://catalog.preciosa-ornela.com/catalog-beads#colour=${item.catalogBead.code}`
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 border border-gray-100 hover:bg-blue-50 hover:border-blue-200 transition-colors"
+      {/* Panel content */}
+      <div className={`
+        absolute bottom-0 left-0 right-0 max-h-[85vh]
+        lg:relative lg:w-full lg:max-h-[calc(100vh-2rem)]
+        bg-white/95 backdrop-blur-sm lg:bg-white/90
+        rounded-t-2xl lg:rounded-lg shadow-2xl lg:shadow-lg
+        flex flex-col
+      `}>
+        {/* Mobile: drag handle */}
+        <div className="lg:hidden sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 py-2 flex justify-center">
+          <div className="w-12 h-1 bg-gray-300 rounded-full" />
+        </div>
+
+        <div className="p-4 flex-1 overflow-y-auto min-h-0">
+          <h2 className="text-sm font-semibold text-gray-800 mb-1">Beads Needed</h2>
+          {loading ? (
+            <p className="text-xs text-gray-500">Loading catalog...</p>
+          ) : (
+            <>
+              <p className="text-[10px] text-gray-500 mb-3">
+                {grouped.length} colors from Preciosa catalog
+              </p>
+
+              <div className="space-y-2">
+                {grouped.map((item) => (
+                  <a
+                    key={item.catalogBead.code}
+                    href={
+                      item.catalogBead.productUrl ||
+                      `https://catalog.preciosa-ornela.com/catalog-beads#colour=${item.catalogBead.code}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 p-2 rounded-lg bg-gray-50 border border-gray-100 hover:bg-blue-50 hover:border-blue-200 transition-colors"
+                  >
+                    <div
+                      className="w-8 h-8 rounded-full shrink-0 border border-gray-200"
+                      style={{ backgroundColor: item.catalogBead.hex }}
+                    />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-medium text-gray-800 truncate">
+                        {item.catalogBead.name}
+                      </p>
+                      <p className="text-[10px] text-blue-600">
+                        {item.catalogBead.code} · {item.catalogBead.finish}
+                      </p>
+                      <p className="text-[10px] text-gray-400">
+                        {item.totalCount} bead{item.totalCount !== 1 ? 's' : ''}
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-0.5 shrink-0">
+                      {item.colors.slice(0, 3).map((c, i) => (
+                        <div
+                          key={i}
+                          className="w-3 h-3 rounded-sm border border-gray-200"
+                          style={{ backgroundColor: c }}
+                          title={c}
+                        />
+                      ))}
+                      {item.colors.length > 3 && (
+                        <span className="text-[8px] text-gray-400">+{item.colors.length - 3}</span>
+                      )}
+                    </div>
+                  </a>
+                ))}
+
+                {grouped.length === 0 && (
+                  <p className="text-xs text-gray-400 text-center py-4">No beads in design yet</p>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Mobile: Close button - sticky at bottom */}
+        <div className="lg:hidden sticky bottom-0 p-4 pt-2 bg-white/95 backdrop-blur-sm border-t border-gray-200">
+          <button
+            onClick={() => onClose?.()}
+            className="w-full py-3 rounded-lg bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-colors"
           >
-            <div
-              className="w-8 h-8 rounded-full shrink-0 border border-gray-200"
-              style={{ backgroundColor: item.catalogBead.hex }}
-            />
-            <div className="flex-1 min-w-0">
-              <p className="text-xs font-medium text-gray-800 truncate">
-                {item.catalogBead.name}
-              </p>
-              <p className="text-[10px] text-blue-600">
-                {item.catalogBead.code} · {item.catalogBead.finish}
-              </p>
-              <p className="text-[10px] text-gray-400">
-                {item.totalCount} bead{item.totalCount !== 1 ? 's' : ''}
-              </p>
-            </div>
-            <div className="flex flex-col gap-0.5 shrink-0">
-              {item.colors.slice(0, 3).map((c, i) => (
-                <div
-                  key={i}
-                  className="w-3 h-3 rounded-sm border border-gray-200"
-                  style={{ backgroundColor: c }}
-                  title={c}
-                />
-              ))}
-              {item.colors.length > 3 && (
-                <span className="text-[8px] text-gray-400">+{item.colors.length - 3}</span>
-              )}
-            </div>
-          </a>
-        ))}
-
-        {grouped.length === 0 && (
-          <p className="text-xs text-gray-400 text-center py-4">No beads in design yet</p>
-        )}
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );
