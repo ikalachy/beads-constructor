@@ -5,6 +5,8 @@ import { getBeadPositionFlat, getBeadPositionWrapped } from '../../engine/bracel
 import { materialPresets } from '../../engine/materials/presets';
 import type { Bead, BeadMaterialType } from '../../types';
 
+const isMobileDevice = typeof window !== 'undefined' && window.innerWidth < 1024;
+
 function BeadInstance({
   bead,
   position,
@@ -15,6 +17,20 @@ function BeadInstance({
   onPaint: () => void;
 }) {
   const [hovered, setHovered] = useState(false);
+
+  // Disable hover effects on mobile for better performance
+  if (isMobileDevice) {
+    return (
+      <Instance
+        position={position}
+        color={bead.color}
+        onClick={(e) => {
+          e.stopPropagation();
+          onPaint();
+        }}
+      />
+    );
+  }
 
   return (
     <Instance
@@ -58,14 +74,17 @@ function MaterialGroup({
 
   if (beads.length === 0) return null;
 
+  // Reduce sphere detail on mobile
+  const segments = isMobileDevice ? 12 : 24;
+
   return (
     <Instances limit={beads.length + 10} range={beads.length}>
-      <sphereGeometry args={[beadRadius, 24, 24]} />
+      <sphereGeometry args={[beadRadius, segments, segments]} />
       <meshPhysicalMaterial
         roughness={preset.roughness}
         metalness={preset.metalness}
-        clearcoat={preset.clearcoat ?? 0}
-        clearcoatRoughness={preset.clearcoatRoughness ?? 0}
+        clearcoat={isMobileDevice ? 0 : (preset.clearcoat ?? 0)}
+        clearcoatRoughness={isMobileDevice ? 0 : (preset.clearcoatRoughness ?? 0)}
       />
       {beads.map(({ bead, row, col }) => {
         const position =
